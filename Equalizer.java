@@ -23,18 +23,28 @@ public class Equalizer {
     }
     private static void eq() {
         int db = rnd.nextInt(3,8);
-        String szin = "\u001B[45m";
-        for (int i = 0; i < db; i++) {
-            System.out.print(szin + " ");
-        }        
-        System.out.println("");
+        eq(db, false);           
+        
     }
-    private static void eq(int hossz){
+    private static void eq(boolean kiir) {
+        int db = rnd.nextInt(3,8);
+        eq(db, kiir);           
+        
+    }
+    private static void eq(int hossz) {
+        int db = rnd.nextInt(3,8);
+        eq(hossz, false);           
+        
+    }
+    private static void eq(int hossz,boolean kiir){
         int db = rnd.nextInt(3,8);
         String szin = "\u001B[45m";
         for (int i = 0; i < db; i++) {
             System.out.print(szin + " ");
         }        
+        if (kiir)
+            System.out.println("\u001B[40m"+(hossz));
+        
         System.out.println("");
     }
 }   
